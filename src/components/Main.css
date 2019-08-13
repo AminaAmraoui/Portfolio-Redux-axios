@@ -1,0 +1,57 @@
+.info-container {
+    color: white;
+    background-color: #17a2b8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+.courselist-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+    height:100vh
+    
+}
+.container-fluid{
+    min-height: 100vh;
+}
+.far{
+    color:white;
+    font-size: 3em;
+    cursor: pointer;
+}
+
+/****** Modal Style ***********/
+.addcourse-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    height: 300px;
+  }
+  .addcourse-btn{
+    display: flex;
+    justify-content: space-around;
+    width: 400px
+  }
+  input[type=button]{
+    background-color: #17a2b8; 
+    border: none;
+    color: white;
+    padding: 12px 28px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+  
+  input[type=text]{
+      width: 300px
+  }
+  textarea{
+      width: 300px
+  }

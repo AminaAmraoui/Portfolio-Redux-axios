@@ -1,0 +1,49 @@
+.course-container{
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+    border: 1px solid lightblue;
+    border-radius: 25px;
+    padding: 5px;
+    margin: 10px 10px
+}
+.course-container img {
+    width: 150px;
+    height: 150px;
+}
+.course-desc-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around
+}
+.fas .far{
+    color: white
+}
+/**************Overlay****************/
+.overlay-container{
+    position: relative;
+}
+.overlay {
+    position: absolute;
+    width: 150px;
+    height:150px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #2CB1BC;
+    top:0;
+    left:0
+  }
+  .overlay-container:hover .overlay {
+    opacity: 1;
+    cursor: pointer;
+  }
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 250%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
