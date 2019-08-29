@@ -27,7 +27,8 @@ const courseReducer = (state = [], action) => {
 }
 
 const store = createStore(combineReducers({
-    courses: courseReducer}))
+    courses: courseReducer}),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 export default store
 
@@ -37,21 +38,24 @@ export default store
 const c = [
     {
         id:1,
-        title:'javascript',
-        description:'course for javascript',
-        fileCourse:'TP7.pdf'
+        title:'Javascript',
+        description:'JS Courses',
+        fileCourse:'TP7.pdf',
+        img:'https://smallimg.pngkey.com/png/small/550-5509803_js-logo-javascript-logo-circle-png.png'
     },
     {
         id:2,
-        title:'html',
-        description:'course for html',
-        fileCourse:'TP2.pdf'
+        title:'Html',
+        description:'Html courses',
+        fileCourse:'TP2.pdf',
+        img:'https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_960_720.png'
     },
     {
         id:3,
-        title:'css',
-        description:'course for css',
-        fileCourse:'TP7.pdf'
+        title:'Css',
+        description:'Css courses',
+        fileCourse:'TP7.pdf',
+        img:'https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_960_720.png'
     }
 ]
 

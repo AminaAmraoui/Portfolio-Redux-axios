@@ -22,10 +22,10 @@ var upload = multer({ storage: storage }).single('file')
 app.post('/upload',function(req, res) {
     upload(req, res, function (err) {
            if (err instanceof multer.MulterError) {
-               console.log('error 1')
+               console.log('error 1 ',res.status(500).json(err))
                return res.status(500).json(err)
            } else if (err) {
-            console.log('error 2')
+            console.log('error 2 ',res.status(500).json(err))
                return res.status(500).json(err)
            }
       return res.status(200).send(req.file)

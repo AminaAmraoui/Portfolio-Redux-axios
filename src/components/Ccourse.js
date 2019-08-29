@@ -2,12 +2,13 @@ import React from 'react'
 import './courseCard.css'
 import axios from 'axios'
 import {connect} from 'react-redux'
-import ModalCourse from './ModalCourse'
 
-const CourseCard = (props) => {
+const CCourse = (props) => {
     const {course = {},
     onDelete = () => {},
-    onEdit = () => {}} = props
+    openModal,
+    onEdit = () => {},
+    getCourse =()=>{}} = props
     const {
         id,
         title = 'No Title',
@@ -16,15 +17,14 @@ const CourseCard = (props) => {
         fileCourse=''
     } = course
 
-
     return <div className="course-container">
-                    <div className="overlay-container">
+        <div className="overlay-container">
                     <img src={img} className="img-fluid rounded-circle" alt='img'/>
                     <div className="overlay">
                         <div className="text">
-                            <button type="button" value="delete" onClick={() => onDelete(id)} className='btn btn-info'><i className="far fa-trash-alt"></i></button>
-                            {/* <button type="button" value="edit" onClick={() => onEdit(course)} className='btn btn-info'><i className="far fa-edit"></i></button> */}
-                            <ModalCourse innerCourse={course}/>
+                            <button type="button" value="delete" onClick={() => onDelete(id)} 
+                                className='btn btn-info'><i className="far fa-trash-alt"></i></button>
+                            <i className="far fa-edit" onClick={()=>{openModal(); getCourse(course); onEdit(true)}}></i>
                         </div>
                     </div>
                     </div> 
@@ -33,10 +33,8 @@ const CourseCard = (props) => {
                         <p>{description}</p>
                         <button type="button" value="more"
                         className='btn btn-info px-4' onClick={()=>getDataFile(fileCourse)}><i className="fas fa-download"></i></button>
-                    </div>
-                </div>
-            
-    
+        </div>
+    </div>
 }
 
 const getDataFile =(nameFile) => {
@@ -58,7 +56,6 @@ const getDataFile =(nameFile) => {
       })
 }
 
-
 const mapDispatchToProps = dispatch => {
     return {
         onDelete: (id) => {
@@ -76,7 +73,7 @@ const mapStateToProps = state => {
     }
 }
 
-const CourseCardContainer =
-    connect(mapStateToProps, mapDispatchToProps)(CourseCard)
+const CCourseContainer =
+    connect(mapStateToProps, mapDispatchToProps)(CCourse)
 
-export default CourseCardContainer
+export default CCourseContainer
